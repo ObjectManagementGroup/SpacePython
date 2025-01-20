@@ -1,0 +1,20 @@
+---
+- !SpaceSystem
+  name: SAT1
+  ParameterSet:
+    - BATVOLT:            [double, {description: "Battery Voltage"} ]
+    - BATTEMP:            [double, {description: "Battery temperature"} ]
+    - MomentumWheelState: [double, {description: "Power state of momentum wheel", value_: On, restriction: !Restriction [Enumeration, [Off, On]]}]
+    - MomentumWheelSpeed: [int, {description: "Spin rate", units: RPM, value_: 2000}]
+  CommandSet:
+    - MomentumWheelOn: []
+    - SetWheelSpeed: [WheelSpeed: [int, {description: "Spin rate", units: RPM, restriction: !Restriction [MaxInclusive, 12000, MinInclusive, -12000]}]]
+- !GemsDevice
+  name: FE1
+  ParameterSet:
+    - Synced:   [boolean,{description: "Link state", restriction: !Restriction [Enumeration, [Locked, Searching, "No Carrier" ]]}]
+    - TlmRate:  [double, {description: "Telemetry data rate", units: bps} ]
+    - Syncword: [int,    {value_: 0xA5A5}]
+  DirectiveSet:
+    - RadioOn: []
+    - ChangeSync: [Syncword: [int, {description: "Sync Pattern"}]]
