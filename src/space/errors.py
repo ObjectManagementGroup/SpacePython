@@ -21,12 +21,8 @@ class VerificationError(SpacePythonException):  #Normative
     '''Command action failed verification telemetry check
     '''
     pass
-class GemsError(SpacePythonException):  #Normative
-    '''An error occurred accessing a GEMS device
-    '''
-    pass
-class IllegalLinkError(SpacePythonException):  #Normative
-    '''The referenced Link does not exist or does not accept commands
+class IllegalAssetError(SpacePythonException):  #Normative
+    '''The referenced Asset does not exist
     '''
     pass
 class UndefinedTypeError(SpacePythonException):  #Normative

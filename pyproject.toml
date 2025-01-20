@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "space"
+version = "1.2.0"
+authors = [
+  { name="Object Management Group", email="space@omg.org" }
+]
+license = {file = "LICENSE"}
+description = "SpacePython core interface"
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent"
+]
+
+[project.urls]
+Homepage = "https://www.omg.org/solm/"
+Issues = "https://issues.omg.org"
