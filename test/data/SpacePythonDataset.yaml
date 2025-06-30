@@ -4,8 +4,8 @@
   ParameterSet:
     - BATVOLT:            [double, {description: "Battery Voltage"} ]
     - BATTEMP:            [double, {description: "Battery temperature"} ]
-    - MomentumWheelState: [double, {description: "Power state of momentum wheel", value_: On, restriction: !Restriction [Enumeration, [Off, On]]}]
-    - MomentumWheelSpeed: [int, {description: "Spin rate", units: RPM, value_: 2000}]
+    - MomentumWheelState: [double, {description: "Power state of momentum wheel", _value: On, restriction: !Restriction [Enumeration, [Off, On]]}]
+    - MomentumWheelSpeed: [int, {description: "Spin rate", units: RPM, _value: 2000}]
   CommandSet:
     - MomentumWheelOn: []
     - SetWheelSpeed: [WheelSpeed: [int, {description: "Spin rate", units: RPM, restriction: !Restriction [MaxInclusive, 12000, MinInclusive, -12000]}]]
@@ -14,7 +14,7 @@
   ParameterSet:
     - Synced:   [boolean,{description: "Link state", restriction: !Restriction [Enumeration, [Locked, Searching, "No Carrier" ]]}]
     - TlmRate:  [double, {description: "Telemetry data rate", units: bps} ]
-    - Syncword: [int,    {value_: 0xA5A5}]
+    - Syncword: [int,    {_value: 0xA5A5}]
   DirectiveSet:
     - RadioOn: []
     - ChangeSync: [Syncword: [int, {description: "Sync Pattern"}]]
